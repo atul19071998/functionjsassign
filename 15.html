@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+    <style>
+    /* styling section starts */
+    /* styling to container */
+       
+      .container {
+        display: flex;
+       flex-direction: column;
+       border: 3px solid black;
+       padding: 20px;
+       margin:30px;
+       width:400px;
+       height:400px;
+       text-align: center;
+       background-image: linear-gradient(orange, lightblue);
+       
+      }
+      /* styling to container */
+      .Username{
+        margin-top: 25px;
+      }
+      /* styling to class password*/
+      .password{
+        margin-top: 10px;
+      }
+      /* styling to class submit*/
+      .submit{
+        margin-top: 10px;
+      }
+      /* styling to class main-container */
+      .main-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+      }
+      /* styling to username-input */
+      .Username input[type=text]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;  
+        
+      }
+       /* styling to class-btn */
+      .btn{
+        width: 40%;
+        padding:15px;
+      }
+      body{
+        background:url(https://media.istockphoto.com/photos/wooden-table-and-empty-blurred-green-leaves-nature-background-for-picture-id1292461341?k=20&m=1292461341&s=170667a&w=0&h=f2M_YTvYU0vCsml-ZmYhMJdGkOWFYgyeSBZAoqemrZE=);
+        background-size: cover;
+
+
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <!-- ///class to main container -->
+    <div class="main-container">
+     <!-- // main container inside container -->
+    <div class="container">
+    <!-- //  give class nav  -->
+        <div class="nav">
+         <!-- // use heading tag in inside container. -->
+      <h1>Form Validation</h1>
+    </div>
+<!-- //create a form in this method name and action ,on submit.
+//starts form section -->
+    <form action="backend.php" name="myform" method="post" onsubmit="return formvalidation()">
+      <div class="Username">
+        <label for="Name">Username</label>
+        <input type="text" name="name" placeholder="Enter your name" ></input> 
+      </div>
+      
+
+        <div class="submit">
+          <button type="submit" value="submit" class="btn">Submit</button>
+          </div>
+        
+    </form>
+    <!-- //ends form section. -->
+</div>
+<!-- //start javascript code -->
+<script>
+    //function to form validation.
+    function formvalidation(){
+    let name=document.myform.name.value;
+    // gives a multiple conditions.if and else if ,else
+
+    if(name==null || name==""){
+        alert("Name must be filled out!");
+        return false;
+
+    }else if(name>0){
+        alert("Numbers are not allowed! inside name section!");
+    }
+    else if(name.length<5){
+        alert("Name must be at least 5 character long")
+        return false;
+    }else{
+        confirm("Your name is Submitted Succesfully");
+        return true;
+    }
+}
+</script>
+<!-- //ends of script tag. -->
+ 
+  </body>
+</html>
